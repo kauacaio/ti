@@ -303,7 +303,7 @@ header {
 
 /* Seção de Novidades */
 #novidades {
-    width: 100%;
+    width: 90%; /* Evita ultrapassar a tela em telas menores */
     max-width: 1200px;
     margin: 80px auto;
     padding: 100px 20px;
@@ -348,7 +348,7 @@ header {
 
 /* Conteúdo da Seção */
 .novidades-content {
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     position: relative;
     z-index: 2;
@@ -356,7 +356,7 @@ header {
 
 .novidades-content h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.5em;
+    font-size: clamp(1.8em, 5vw, 2.5em); /* Ajusta dinamicamente conforme a tela */
     font-weight: 700;
     line-height: 1.4;
     margin: 0;
@@ -378,11 +378,12 @@ header {
 /* Responsividade */
 @media (max-width: 768px) {
     .novidades-content h2 {
-        font-size: 2em;
+        font-size: clamp(1.5em, 4vw, 2em);
     }
 
     #novidades {
-        padding: 60px 20px;
+        width: 95%; /* Reduz um pouco a largura em telas menores */
+        padding: 60px 15px;
         margin-top: 40px;
     }
 
@@ -390,8 +391,6 @@ header {
         font-size: 0.8em;
     }
 }
-
-
 
 
 
