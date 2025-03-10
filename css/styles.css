@@ -1,463 +1,241 @@
-Compartilhar
-
-User
-Você disse:
-/* Estilos Globais */
-body {
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: #fff;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
     color: #333;
     line-height: 1.6;
 }
 
-/* Logo "Time de TI" */
 header {
     text-align: center;
-    padding: 40px 20px;
-    margin-bottom: 20px;
+    padding: 40px 20px 10px 20px;
+    background-color: white;
+    animation: fadeIn 1s ease-in-out;
 }
 
-.logo {
-    font-family: 'Poppins', sans-serif;
-    font-size: 3em;
-    font-weight: bold;
-    margin: 0;
-    color: #0072ff;
-}
-
-.logo .rgb {
-    background: linear-gradient(135deg, #0072ff, #00c6ff, #00ff88);
+header .logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #007AFF, #00D1FF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: rgb-effect 3s infinite alternate;
+    margin-bottom: 5px;
 }
 
-@keyframes rgb-effect {
-    0% { opacity: 0.8; }
-    100% { opacity: 1; }
+header .logo::after {
+    content: "Greenn";
+    display: block;
+    font-size: 1rem;
+    color: #888;
+    font-weight: 400;
+    margin-top: 5px;
 }
 
-/* Frases Motivacionais */
+header .rgb {
+    background: linear-gradient(45deg, #00D1FF, #00FFA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 #slider {
-    background: #f0f4f8;
-    padding: 20px;
     text-align: center;
-    font-size: 1.2em;
-    margin-bottom: 40px; /* Mais espaço abaixo das frases */
-    position: relative;
-    height: 60px;
-    overflow: hidden;
-    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    margin: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s ease-in-out;
 }
 
 .slides {
     position: relative;
-    height: 100%;
+    height: 60px;
+    overflow: hidden;
 }
 
 .slide {
-    margin: 0;
-    padding: 10px 0;
     position: absolute;
     width: 100%;
-    text-align: center;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    font-size: 1.2rem;
+    color: #555;
 }
 
 .slide.active {
     opacity: 1;
 }
 
-/* Mensagem acima dos Botões */
 #mensagem {
     text-align: center;
-    margin-bottom: 40px; /* Mais espaço abaixo da mensagem */
+    padding: 20px;
+    font-size: 1.5rem;
+    color: #555;
+    margin: 40px 0;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-#mensagem h2 {
-    font-size: 1.5em;
-    color: #0072ff;
-}
-
-/* Botões Interativos */
 #botoes {
     display: flex;
     justify-content: center;
-    margin-bottom: 100px; /* Mais espaço abaixo dos botões */
     flex-wrap: wrap;
-    gap: 20px; /* Espaço entre os botões */
+    gap: 15px;
+    padding: 20px;
+    margin: 40px 0;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .btn {
-    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    background: linear-gradient(45deg, #007AFF, #00D1FF);
+    color: white;
     border: none;
-    color: #fff;
-    padding: 12px 2px; /* Botões menores */
-    font-size: 1em;
+    padding: 10px 20px; /* Altura reduzida */
+    border-radius: 8px; /* Bordas mais arredondadas */
+    font-size: 1rem;
     cursor: pointer;
-    border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex: 0 1 200px; /* Reduzindo o tamanho dos botões */
+    width: 200px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
 
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: all 0.5s ease;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.btn:hover::after {
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Mensagem acima dos Cards */
 #msg-cards {
     text-align: center;
-    margin-bottom: 20px;
-}
-
-#msg-cards h2 {
-    font-size: 1.5em;
-    color: #0072ff;
+    padding: 20px;
+    font-size: 1.2rem;
+    color: #555;
+    margin: 40px 0;
+    animation: fadeIn 2.5s ease-in-out;
 }
 
 #msg-cards a {
-    color: #00c6ff;
+    color: #007AFF;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 #msg-cards a:hover {
-    text-decoration: underline;
+    color: #00D1FF;
 }
 
-/* Cards de Perfil */
 #cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+    gap: 20px;
+    padding: 20px;
+    margin: 40px 0;
+    animation: fadeIn 3s ease-in-out;
 }
 
 .card {
-    background: #f0f4f8;
-    border-radius: 10px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 230px;
     text-align: center;
-    margin: 10px;
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 280px; /* Cards um pouco menores */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .card img {
-    width: 100px;
-    height: 100px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    width: 100px; /* Imagem um pouco menor */
+    height: 100px;
+    margin-bottom: 15px;
 }
 
 .card h3 {
-    color: #0072ff;
-    margin: 0;
+    font-size: 1.2rem; /* Texto um pouco menor */
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .card p {
-    color: #555;
-    margin: 0;
+    font-size: 0.8rem; /* Texto um pouco menor */
+    color: #666;
+    word-wrap: break-word;
 }
 
-/* Seção de Novidades */
 #novidades {
-    width: 100%;
-    max-width: 1200px; /* Limita a largura para evitar estourar a tela */
-    margin: 80px auto; /* Centraliza e mantém espaçamento adequado */
-    padding: 100px 40px;
-    background: #ffffff; /* Fundo branco para mais leveza */
-    color: #000; /* Texto preto para melhor contraste */
     text-align: center;
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px; /* Bordas arredondadas para suavidade */
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
-}
-
-/* Camadas do efeito de Aurora Boreal mais claras */
-.aurora {
-    position: absolute;
-    width: 110%;
-    height: 110%;
-    top: -5%;
-    left: -5%;
-    background: radial-gradient(circle, rgba(#0072ff) 20%, rgba(#00c6ff) 50%, transparent 80%);
-    filter: blur(90px);
-    animation: aurora-move 10s infinite alternate ease-in-out;
-    opacity: 0.6;
-    z-index: 1;
-}
-
-.aurora:nth-child(2) {
-    animation-duration: 12s;
-    background: radial-gradient(circle, rgba(144, 238, 144, 0.25) 15%, rgba(173, 216, 230, 0.2) 50%, transparent 80%);
-    filter: blur(100px);
-    opacity: 0.5;
-}
-
-@keyframes aurora-move {
-    0% {
-        transform: translateY(-3%) translateX(-3%) scale(1.1);
-    }
-    50% {
-        transform: translateY(3%) translateX(3%) scale(1.15);
-    }
-    100% {
-        transform: translateY(-3%) translateX(-3%) scale(1.1);
-    }
-}
-
-/* Seção de Novidades */
-#novidades {
-    width: 100%;
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 100px 20px;
-    background: #ffffff;
-    color: #000;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Efeito de Sombra em Verde e Azul com Movimento */
-#novidades::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(0, 255, 150, 0.2) 20%, rgba(0, 150, 255, 0.2) 50%, transparent 80%);
-    filter: blur(50px);
-    animation: sombra-movimento 6s infinite alternate ease-in-out;
-    z-index: 1;
-}
-
-@keyframes sombra-movimento {
-    0% {
-        transform: translateY(-10px) translateX(-10px);
-    }
-    100% {
-        transform: translateY(10px) translateX(10px);
-    }
-}
-
-/* Seção de Novidades */
-#novidades {
-    width: 100%;
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 100px 20px;
-    background: #ffffff;
-    color: #000;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Efeito de Sombra em Verde e Azul com Movimento */
-#novidades::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(0, 255, 150, 0.3) 20%, rgba(0, 150, 255, 0.3) 50%, transparent 80%);
-    filter: blur(50px);
-    animation: sombra-movimento 6s infinite alternate ease-in-out;
-    z-index: 1;
-    opacity: 0.8;
-}
-
-@keyframes sombra-movimento {
-    0% {
-        transform: translateY(-15px) translateX(-15px) scale(1);
-        opacity: 0.7;
-    }
-    50% {
-        transform: translateY(10px) translateX(10px) scale(1.05);
-        opacity: 0.9;
-    }
-    100% {
-        transform: translateY(-10px) translateX(-10px) scale(1);
-        opacity: 0.8;
-    }
-}
-
-/* Seção de Novidades */
-#novidades {
-    width: 90%; /* Evita ultrapassar a tela em telas menores */
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 100px 20px;
-    background: #ffffff;
-    color: #000;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Efeito de Sombra em Verde e Azul com Movimento */
-#novidades::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(0, 255, 150, 0.4) 20%, rgba(3, 247, 76, 0.4) 50%, transparent 80%);
-    filter: blur(60px);
-    animation: sombra-movimento 5s infinite alternate ease-in-out;
-    z-index: 1;
-    opacity: 0.9;
-}
-
-@keyframes sombra-movimento {
-    0% {
-        transform: translateY(-20px) translateX(-20px) scale(1);
-        opacity: 0.8;
-    }
-    50% {
-        transform: translateY(15px) translateX(15px) scale(1.08);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-15px) translateX(-15px) scale(1);
-        opacity: 0.9;
-    }
-}
-
-/* Conteúdo da Seção */
-.novidades-content {
-    max-width: 100%;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
+    padding: 40px 20px;
+    background-color: white;
+    margin: 40px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 3.5s ease-in-out;
 }
 
 .novidades-content h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(1.8em, 5vw, 2.5em); /* Ajusta dinamicamente conforme a tela */
-    font-weight: 700;
-    line-height: 1.4;
-    margin: 0;
-    color: #000;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
 }
 
-/* Texto Reservado ao Fundo */
+.novidades-content h2 strong {
+    color: #007AFF;
+    font-weight: 600;
+}
+
 .texto-reservado {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9em;
-    color: rgba(0, 0, 0, 0.3);
-    z-index: 2;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 10px;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .novidades-content h2 {
-        font-size: clamp(1.5em, 4vw, 2em);
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-
-    #novidades {
-        width: 95%; /* Reduz um pouco a largura em telas menores */
-        padding: 60px 15px;
-        margin-top: 40px;
-    }
-
-    .texto-reservado {
-        font-size: 0.8em;
+    to {
+        opacity: 1;
     }
 }
 
-
-
-
-/* Carrossel de Novidades */
-.carrossel {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.carrossel-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carrossel-item {
-    width: 100%;
-    flex-shrink: 0;
-    display: none;
-    border-radius: 10px;
-}
-
-.carrossel-item.active {
-    display: block;
-}
-
-.carrossel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 1.5em;
-    transition: background 0.3s ease;
-}
-
-.carrossel-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-.carrossel-btn.prev {
-    left: 10px;
-}
-
-.carrossel-btn.next {
-    right: 10px;
-}
-/* Responsividade */
-@media (max-width: 768px) {
-    .logo {
-        font-size: 2em;
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
     }
-
-    .btn {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .card {
-        width: 100%;
-        margin: 10px 0;
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
