@@ -29,7 +29,7 @@ header .logo {
 }
 
 header .logo::after {
-    content: "TECNOLOGIA DA INFORMAÇÂO GREEENN";
+    content: "TECNOLOGIA DA INFORMAÇÂO GREENN";
     display: block;
     font-size: 1rem;
     color: #888;
