@@ -254,11 +254,11 @@ header .rgb {
 
 .modal-conteudo {
     background-color: #fff;
-    margin: 10% auto;
+    margin: 10% auto; /* Centraliza o modal verticalmente */
     padding: 30px;
     border-radius: 12px;
     width: 90%;
-    max-width: 600px;
+    max-width: 600px; /* Limita a largura máxima */
     position: relative;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }

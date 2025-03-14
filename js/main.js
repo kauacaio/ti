@@ -45,10 +45,12 @@ function abrirModal() {
     modal.style.display = "block";
 }
 
+// Fechar modal ao clicar no botão de fechar
 span.onclick = function() {
     modal.style.display = "none";
 }
 
+// Fechar modal ao clicar fora dele
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
