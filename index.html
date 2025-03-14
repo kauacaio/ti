@@ -10,15 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Logo "Time de TI" -->
     <header>
         <h1 class="logo">Time de <span class="rgb">TI</span></h1>
     </header>
 
-    <!-- Frases Motivacionais -->
     <section id="slider">
         <div class="slides">
-            <p class="slide active">"A tecnologia move o mundo."</p>
+            <p class="slide">"A tecnologia move o mundo."</p>
             <p class="slide">"Equilíbrio entre vida e código é essencial."</p>
             <p class="slide">"Inovação é a chave para o futuro."</p>
             <p class="slide">"Descanse, recarregue e volte mais forte."</p>
@@ -34,33 +32,55 @@
             <p class="slide">"A tecnologia só faz sentido quando melhora vidas."</p>
             <p class="slide">"O futuro é programável, e eu estou escrevendo as linhas."</p>
             <p class="slide">Seja sempre você, porque é isso que faz a diferença!</p>
-
         </div>
     </section>
 
-    <!-- Mensagem acima dos Botões -->
     <section id="mensagem">
         <h2>O que você busca hoje?</h2>
     </section>
 
-    <!-- Botões Interativos -->
     <section id="botoes">
         <button class="btn" onclick="abrirTask()">Abrir Task</button>
         <button class="btn" onclick="abrirTutoriais()">Tutoriais</button>
         <button class="btn" onclick="primeiraConfig()">Primeira Configuração</button>
-        <!-- Botão para acessar o Manual do Colaborador -->
         <button class="btn" onclick="acessarManual()">Manual do Colaborador</button>
         <button class="btn" onclick="redefinirSenha()">Redefinir Senha</button>
-        <button class="btn" onclick="erpbi()">ERP BI</button>
-        
+        <button class="btn" onclick="abrirModal()">Outros</button>
     </section>
 
-    <!-- Mensagem acima dos Cards -->
+    <div id="meuModal" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar">&times;</span>
+            <h2>Acessos Rápidos</h2>
+            <ul class="app-list">
+                <li class="app-item" onclick="window.open('public/pomodoro/index.html', '_blank')">
+                    <img src="assets/pomodoro1.png" alt="Pomodoro">
+                    <span>Pomodoro</span>
+                </li>
+                <li class="app-item" onclick="window.open('https://erp.gdigital.com.br/greenn/admin/', '_blank')">
+                    <img src="assets/greenn.png" alt="ERP/BI">
+                    <span>ERP/BI</span>
+                </li>
+                <li class="app-item" onclick="window.open('https://greenn.com.br/sales', '_blank')">
+                    <img src="assets/sales.png" alt="Greenn sales">
+                    <span>Greenn sales</span>
+                </li>
+                <li class="app-item" onclick="window.open('https://greenn.com.br/', '_blank')">
+                    <img src="assets/greenn.png" alt="greenn">
+                    <span>Greenn</span>
+                </li>
+                <li class="app-item" onclick="window.open('https://greenn.com.br/club/', '_blank')">
+                    <img src="assets/club.png" alt="club">
+                    <span>Club</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <section id="msg-cards">
         <h2>Não encontrou o que procura? <a href="https://mail.google.com/chat/u/0/#chat/home">Fale com a TI!</a></h2>
     </section>
 
-    <!-- Cards de Perfil -->
     <section id="cards">
         <div class="card">
             <img src="assets/eu.png" alt="Pessoa 1">
@@ -82,16 +102,14 @@
             <h3>Danilo Macedo</h3>
             <p>danilo@greenn.com.br</p>
         </div>
-       
     </section>
 
-   <!-- Espaço de Novidades -->
-<section id="novidades">
-    <div class="novidades-content">
-        <h2>Nosso time está dedicado a agilizar e simplificar os processos, garantindo praticidade e eficiência.</h2>
-    </div>
-    <div class="texto-reservado">Reservado ao Time de TI e Greenn</div>
-</section>
+    <section id="novidades">
+        <div class="novidades-content">
+            <h2>Nosso time está dedicado a agilizar e simplificar os processos, garantindo praticidade e eficiência.</h2>
+        </div>
+        <div class="texto-reservado">Reservado ao Time de TI e Greenn</div>
+    </section>
 
     <script src="js/main.js"></script>
 </body>

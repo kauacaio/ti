@@ -95,8 +95,8 @@ header .rgb {
     background: linear-gradient(45deg, #007AFF, #00D1FF);
     color: white;
     border: none;
-    padding: 10px 20px; /* Altura reduzida */
-    border-radius: 8px; /* Bordas mais arredondadas */
+    padding: 10px 20px;
+    border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -164,7 +164,7 @@ header .rgb {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    width: 280px; /* Cards um pouco menores */
+    width: 280px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -175,19 +175,19 @@ header .rgb {
 
 .card img {
     border-radius: 50%;
-    width: 100px; /* Imagem um pouco menor */
+    width: 100px;
     height: 100px;
     margin-bottom: 15px;
 }
 
 .card h3 {
-    font-size: 1.2rem; /* Texto um pouco menor */
+    font-size: 1.2rem;
     color: #333;
     margin-bottom: 10px;
 }
 
 .card p {
-    font-size: 0.8rem; /* Texto um pouco menor */
+    font-size: 0.8rem;
     color: #666;
     word-wrap: break-word;
 }
@@ -237,5 +237,102 @@ header .rgb {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-conteudo {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.fechar {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fechar:hover,
+.fechar:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+.app-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.app-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    min-width: 100px;
+    box-sizing: border-box;
+}
+
+.app-item:hover {
+    transform: translateY(-3px);
+    opacity: 0.8;
+}
+
+.app-item img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+}
+
+.app-item span {
+    font-size: 0.9rem;
+    color: #333;
+    text-align: center;
+    word-break: break-word;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .modal-conteudo {
+        padding: 20px;
+    }
+
+    .app-list {
+        gap: 15px;
+    }
+
+    .app-item {
+        padding: 12px;
+    }
+
+    .app-item img {
+        width: 35px;
+        height: 35px;
     }
 }

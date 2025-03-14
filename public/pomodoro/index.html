@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Greenn</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="pomodoro1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="boasVindas" class="boas-vindas">
+        <img src="pomodoro1.png" alt="PomodoroLogo" class="boas-vindas-logo">
+        <h1 class="titulo-pomodoro">Pomodoro TI</h1>
+    </div>
+    <div class="pomodoro">
+        <h1 class="titulo-pomodoro-fixo"></h1>
+        <div class="timer">
+            <svg class="progress-ring" width="300" height="300">
+                <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="140" cx="150" cy="150"/>
+            </svg>
+            <div class="time">25:00</div>
+        </div>
+        <div class="controls">
+            <div class="control-group">
+                <button id="start">Iniciar</button>
+                <button id="pause">Pausar</button>
+                <button id="reset">Resetar</button>
+            </div>
+            <div class="control-group">
+                <button id="darkModeToggle" class="dark-mode-toggle">Modo Escuro</button>
+            </div>
+        </div>
+        <div class="settings">
+            <label for="workTime">Trabalho:</label>
+            <input type="number" id="workTime" value="25">
+            <label for="breakTime">Descanso:</label>
+            <input type="number" id="breakTime" value="5">
+        </div>
+    </div>
+    <div class="footer">Desenvolvido pelo Time de TI Greenn</div>
+    <script src="script.js"></script>
+</body>
+</html>
