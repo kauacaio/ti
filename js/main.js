@@ -40,19 +40,25 @@ function abrirTutoriais() {
 const modal = document.getElementById("meuModal");
 const btnModal = document.querySelector("#botoes button:last-child");
 const span = document.getElementsByClassName("fechar")[0];
+document.getElementById("meuModal").style.display = "none";
 
-function abrirModal() {
-    modal.style.display = "block";
-}
+document.addEventListener("DOMContentLoaded", function () {
+    var modal = document.getElementById("meuModal");
+    var fechar = document.querySelector(".fechar");
 
-// Fechar modal ao clicar no botão de fechar
-span.onclick = function() {
-    modal.style.display = "none";
-}
+    window.abrirModal = function () {
+        modal.style.display = "flex";
+    };
 
-// Fechar modal ao clicar fora dele
-window.onclick = function(event) {
-    if (event.target == modal) {
+    window.fecharModal = function () {
         modal.style.display = "none";
-    }
-}
+    };
+
+    fechar.addEventListener("click", fecharModal);
+
+    window.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            fecharModal();
+        }
+    });
+});
