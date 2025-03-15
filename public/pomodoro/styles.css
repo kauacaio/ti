@@ -178,6 +178,16 @@ body {
     color: #bbb;
 }
 
+.dark-mode {
+    background-color: #121212; /* Fundo escuro */
+    color: #ffffff; /* Texto branco */
+}
+
+.dark-mode .footer {
+    color: #bbb;
+}
+
+
 @media (max-width: 600px) {
     .titulo-pomodoro-fixo {
         font-size: 1.5rem; /* Tamanho menor para telas pequenas */

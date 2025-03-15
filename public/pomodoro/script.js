@@ -93,9 +93,15 @@ function notify(message) {
     }
 }
 
-darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Escuro';
+document.addEventListener("DOMContentLoaded", function () {
+    const darkModeToggle = document.getElementById("darkModeToggle");
+
+    darkModeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        darkModeToggle.textContent = document.body.classList.contains("dark-mode")
+            ? "Modo Claro"
+            : "Modo Escuro";
+    });
 });
 
 startButton.addEventListener('click', () => {
