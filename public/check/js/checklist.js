@@ -51,7 +51,6 @@ function gerarPassos() {
     const listaPassos = document.querySelector('.lista-passos');
 
     passos.forEach((passo, index) => {
-        // Cria o item do passo
         const passoItem = document.createElement('div');
         passoItem.classList.add('passo-item');
         passoItem.innerHTML = `
@@ -65,46 +64,54 @@ function gerarPassos() {
     });
 }
 
-// Função para atualizar o progresso
 function atualizarProgresso(index) {
     const passos = document.querySelectorAll('.passo-item');
     const finalizarBtn = document.getElementById('finalizar-btn');
     const linhaPreenchida = document.querySelector('.linha-progresso-preenchida');
     const porcentagemProgresso = document.querySelector('.porcentagem-progresso');
     const logoGreenn = document.getElementById('logo-greenn');
+    const checkbox = passos[index].querySelector('input[type="checkbox"]');
 
-    // Marca o passo como concluído
-    passos[index].classList.add('concluido');
+    if (checkbox.checked) {
+        passos[index].classList.add('concluido');
+    } else {
+        passos[index].classList.remove('concluido');
+    }
 
-    // Atualiza a linha de progresso
-    const porcentagem = ((index + 1) / passos.length) * 100;
-    linhaPreenchida.style.height = `${porcentagem}%`;
+    const porcentagem = (Array.from(passos).filter(passo => passo.classList.contains('concluido')).length / passos.length) * 100;
 
-    // Atualiza a porcentagem exibida
+    if (window.innerWidth <= 768) {
+        // Celular: preenche a largura
+        linhaPreenchida.style.width = `${porcentagem}%`;
+    } else {
+        // Desktop: preenche a altura
+        linhaPreenchida.style.height = `${porcentagem}%`;
+    }
+
     porcentagemProgresso.textContent = `${Math.round(porcentagem)}%`;
 
-    // Atualiza a cor do logo Greenn
     logoGreenn.style.background = `linear-gradient(135deg, #0dd65a ${porcentagem}%, #00c6ff ${porcentagem}%)`;
     logoGreenn.style.webkitBackgroundClip = 'text';
     logoGreenn.style.webkitTextFillColor = 'transparent';
 
-    // Verifica se todos os passos foram concluídos
     const todosConcluidos = Array.from(passos).every(passo => passo.classList.contains('concluido'));
     if (todosConcluidos) {
         finalizarBtn.disabled = false;
+    } else {
+        finalizarBtn.disabled = true;
     }
 }
 
 // Função para finalizar o checklist
 function finalizarChecklist() {
     const modal = document.getElementById('modal-conclusao');
-    modal.style.display = 'flex'; // Exibe o modal
+    modal.style.display = 'flex';
 }
 
 // Função para fechar o modal
 function fecharModal() {
     const modal = document.getElementById('modal-conclusao');
-    modal.style.display = 'none'; // Oculta o modal
+    modal.style.display = 'none';
 }
 
 // Inicializa os passos ao carregar a página
