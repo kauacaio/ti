@@ -9,7 +9,7 @@ const passos = [
         descricao: "Use seu e-mail profissional e a senha provisória fornecida.",
     },
     {
-        titulo: "Passo 3: Cadastrar Multi-Fator",
+        titulo: "Passo 3: Cadastrar Multifator",
         descricao: "Recomendamos o uso do Jumpcloud Protect.",
     },
     {
